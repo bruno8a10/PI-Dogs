@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const { Breed } = require('../db.js');
+const { Dog } = require('../db.js');
 router.post('/', async (req, res) => {
 	const { name, height, weight, life_span, image, temperaments } = req.body;
 	if (temperaments.length === 0) {
