@@ -1,23 +1,23 @@
 const { Router } = require('express');
 const router = Router();
-const { Dog } = require('../db.js');
+const { Dog, Temperament, Dog_Tem } = require('../db.js');
 router.post('/', async (req, res) => {
-	const { name, height, weight, life_span, image, temperaments } = req.body;
-	if (temperaments.length === 0) {
-		return res.sendStatus(500);
-	}
+	const { name, height, weight, life_span, image, temperaments} = req.body;
+	console.log(temperaments);
 	try {
-		let newBreed = await Breed.create({
+		let newDog = await Dog.findOrCreate({
+		where:{
 			name,
 			height,
 			weight,
 			life_span,
-			image: image
+			image,
+		}	
 		});
-		await newBreed.addTemperament(temperaments);
-		res.json(newBreed);
+		await newDog.addTemperament(temperaments);
+		 return res.json(newDog);
 	} catch (error) {
-		res.status(500).json(error);
+		return res.status(500).json(error);
 	}
 });
 module.exports = router;

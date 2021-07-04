@@ -29,9 +29,9 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
 
-    apiId: {
-      type: DataTypes.INTEGER,
-    }
+    // apiId: {
+    //   type: DataTypes.INTEGER,
+    // }
 
 
   }, { timestamps: false });
