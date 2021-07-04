@@ -1,14 +1,14 @@
 // import { GET_POKEMONES} from "../actions"
 // //==== Setear Estado Global Inicial ======//
-// const initialState = {
-//     temperament:[],
-//     dogs:[],
-//     dogDetalles:{},
-//     filtroTemperament:[],
-//     ordenarDog:[]
-// }
+const initialState = {
+    temperament:[],
+    dogs:[],
+    dogDetalles:{},
+    filtroTemperament:[],
+    ordenarDog:[]
+}
 // //==== Setear Reducers ======//
-// function rootReducer(state = initialState, action){
+function rootReducer(state = initialState, action){
 //     if (action.type === "FiltrarPorTemperament") {
 //         console.log(state)
 //         return {
@@ -36,5 +36,5 @@
 //        }
 //     }
 //     return state;
-// }
-// export default rootReducer;
+}
+ export default rootReducer;

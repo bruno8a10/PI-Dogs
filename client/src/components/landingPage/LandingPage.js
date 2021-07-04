@@ -12,7 +12,7 @@ import f11 from "../../img/lp/f11.jpg";
 import f12 from "../../img/lp/f12.jpg";
 import logo from "../../img/apiDog.png";
 import { Link } from "react-router-dom";
-import "./inicial.css"
+import "./LandingPage.css"
 function LandingPage() {
     return(
     <div>
