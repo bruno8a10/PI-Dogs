@@ -1,4 +1,4 @@
-const URLAPI = "https://api.thedogapi.com/v1/breeds?key=ec34df1f-bb5a-43c4-833d-77189fd56edb?limit=2";
+const URLAPI = "https://api.thedogapi.com/v1/breeds?key=ec34df1f-bb5a-43c4-833d-77189fd56edb";
 const {Router}= require("express");
 const { Dog, Temperament, Dog_Tem} = require("../db.js");
 const {Op} = require ("sequelize");
@@ -7,13 +7,16 @@ const app = Router();
 app.get("/", async (req,res) =>{
     const name = req.query.name;
     try{
+        let ApiDog =  await axios.get(URLAPI)
+        const ApiDogName = ApiDog.data;
          if(name){
            try{
-            let ApiDogName = await(`http://api.thedogapi.com/v1/breeds/name=${name}`);
-             console.log(ApiDogName)
-             if(ApiDogName){
-             return res.status(200).json(ApiDogName)    
-             }
+               for(let i=0; i< ApiDogName.length;i++){
+                   console.log(ApiDogName[i].name)
+                   if(ApiDogName[i].name == name){
+                    return res.status(200).json(ApiDogName[i])
+                   }
+               }
              let BsDogName = await Dog.findAll({
                 where:{
                     name:{
@@ -22,9 +25,8 @@ app.get("/", async (req,res) =>{
                 } 
              },);
              if(BsDogName){
-             return res.status(200).json(BsDogName)    
-             }
-             return res.send("No existe ese nombre")
+              return res.status(200).json(BsDogName)    
+              }
            }catch(error){
            return res.send(error);
            }
