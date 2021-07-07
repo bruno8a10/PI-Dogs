@@ -9,6 +9,14 @@ app.get("/:id", async function (req,res){
     console.log(id)
     if(id){
         try{
+            let ApiDog =  await axios.get(URLAPI)
+            const ApiDogName = ApiDog.data;
+            for(let i=0; i< ApiDogName.length;i++){
+                if(ApiDogName[i].id == id){
+                 return res.status(200).json(ApiDogName[i])
+                }
+            }
+
          let dogId = await Dog.findByPk(id,
             {
             include:[Temperament] 

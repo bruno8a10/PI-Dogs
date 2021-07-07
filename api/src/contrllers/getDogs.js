@@ -27,6 +27,7 @@ app.get("/", async (req,res) =>{
              if(BsDogName){
               return res.status(200).json(BsDogName)    
               }
+              return res.send("No existe Id")  
            }catch(error){
            return res.send(error);
            }
