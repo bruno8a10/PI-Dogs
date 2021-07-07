@@ -1,0 +1,31 @@
+
+.contenedor{
+    
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  /* li {
+    background-color: #F6E3CA;
+    float: left;
+    text-align: center;
+    width: 5em;
+  } */
+  
+  .paginationBtns{
+      margin-top: 400px;
+    margin-left: 50px;
+      width: 80%;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .img:hover{
+    transform: scale(1.5);
+  }

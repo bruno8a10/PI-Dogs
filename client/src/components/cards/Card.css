@@ -1,0 +1,27 @@
+.movieCard {
+    display: flex;
+    width: 410px;
+    height: 220px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 350px;
+    border-radius: 10px;
+    border: 1px solid;
+    position: relative;
+    margin: 38px;
+    margin-top: 0px;
+    padding: 0.5em 0;
+  } 
+   .img:hover{
+     transform: scale(1.5);
+   }
+   .movieImage {
+     border-radius: 15px;
+     background-color: azure;
+   }
+   @media (max-width: 560px) {
+     .movieImage {
+       width: 90%;
+       height: auto;
+     }
+   }

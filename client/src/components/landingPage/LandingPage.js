@@ -17,7 +17,7 @@ function LandingPage() {
     return(
     <div>
           <p class="centrado">
-          <img className="i" width="400" height="120" src={logo} ></img>
+          <img className="i" width="400" height="100" src={logo} ></img>
           </p>
           <div className="content-all">
            <div class="content-carrousel">

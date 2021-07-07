@@ -1,16 +1,47 @@
+import React, { useEffect, useState } from "react";
+import {getDogS} from "../../actions";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 import logo from "../../img/apiDog.png";
 import "./Home.css";
 import Menu from "../menu/Menu";
-function Home() {
+import Cards from "../cards/Cards"
+function Home(props) {
+
+//_____________________
+const [query, setQuery] = useState('');
+useEffect(() => {
+  async function fetchData(query) {
+    await props.getDogS(query)
+  }
+  fetchData(query)
+},[query])
+
+const handleChange = (q) => {
+  setQuery(q);
+}
+
     return(
     <div>
           <p class="centrado">
-          <img className="i" width="400" height="120" src={logo} ></img>
+          <img className="i" width="400" height="100" src={logo} ></img>
           </p>
         <Menu/>
+        <Cards/>
 
     </div>
     )
   }
-   export default (Home);
+   //===========================================//
+function mapStateToProps(state){
+  return {
+    ...state
+  }
+}
+//Actions
+function mapDispatchToProps(dispatch) {
+  return {
+    getDogS: (query) => dispatch(getDogS(query))
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Home);
