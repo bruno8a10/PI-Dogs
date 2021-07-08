@@ -18,11 +18,10 @@
   } */
   
   .paginationBtns{
-      margin-top: 400px;
-    margin-left: 50px;
+      margin-top: 600px;
+      margin-left: 50px;
       width: 80%;
-      height: 40px;
-      display: flex;
+      height: 60px;
       justify-content: center;
   }
   

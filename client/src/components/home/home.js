@@ -22,7 +22,7 @@ const handleChange = (q) => {
 }
 
     return(
-    <div>
+    <div className="Home">
           <p class="centrado">
           <img className="i" width="400" height="100" src={logo} ></img>
           </p>

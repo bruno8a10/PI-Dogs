@@ -20,7 +20,9 @@ function Cards(props) {
              <Card    
                  id={c.id}
                 name={c.name}
-                image={c.image.url}
+
+                image={c.image.url || c.image}
+                temperament={c.temperament}
              /> 
            </div>
            )}
