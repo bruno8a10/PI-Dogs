@@ -28,7 +28,7 @@ export default function NavBar() {
       <a href="#">Ordenar Des</a>
     </li>
     <li>
-      <a href="#">Agregar</a>
+      <a href="/Alta">Agregar</a>
     </li>
   </ul>
 </nav>

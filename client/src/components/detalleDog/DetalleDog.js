@@ -22,11 +22,8 @@ function DetalleDog(props) {
           </p> 
      <Menu2/>
       <div>
-      <p className="centrado">
-      <h4 >Detalle Perro</h4>
-      </p> 
        {props.dogDetalles.name ?
-        <div className="detallePokemon" >
+        <div className="detalle" >
            <h4>{props.dogDetalles.name}</h4>
           <img width = "600px" height = "240px"src={props.dogDetalles.image} alt={props.dogDetalles.name}/>
           <h4>Vida: {props.dogDetalles.life_span}</h4>
