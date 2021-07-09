@@ -1,48 +1,11 @@
 .detallePokemon {
-    width: 100%;
+  border-radius: 10px; /*bordes redondos*/
+    border: 3px solid #ffffff; /*anchura, estilo y color borde*/
+    width: 60%;
     margin: 0 auto;
     text-align: center;
 }
-/* .menu{
-    display: flex;
-    position: static;
-    width: 100px;
-    padding-top: 20px;
-}
-ul {
-    list-style-type: none;
-    text-align: center
-  } */
-  .forms {
-    
-    /* Centrar el formulario en la página */
-    margin: 0 auto;
-    width: 400px;
-    /* Esquema del formulario */
-    padding: 1em;
-    border: 5px solid #CCC;
-    border-radius: 1em;
-  }
-  .navbar{
-    display: flex;
-    margin-top: 20px;
-    margin-left: 30px;
-    background: url(../../img/fondo.png);
-    width: 400px;
-    height: 53px;
-    /* background-color: #3366cc; */
-    justify-content: space-around;
-    /**margin-bottom: 1em;**/
-    padding: 0.5em 0;
-    border: 4px solid #3366cc;
-    border-radius: 5px;
-  }
-  .Detalle {
-    display:inline-flexbox;
-    position: relative;
-    padding-left: 720px;
-    padding-top:140px;
-    width: 500%;
-    background-color: transparent;
+
+    p.centrado {
       text-align: center;
-    }
+    } 

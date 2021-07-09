@@ -3,7 +3,7 @@ import {getDetalleDog,getTypes, emptyDetalleDog} from "../../actions";
 import {connect} from 'react-redux';
 import logo from "../../img/apiDog.png";
 import Spinner from "../Spinner";
-import "./DetalleDog";  
+import "./DetalleDog.css"; 
 import { Link } from "react-router-dom";
 import Menu2 from "../menu/Menu2";
 
@@ -16,21 +16,22 @@ function DetalleDog(props) {
   },[id])
 
     return (
-      <div className="Detalle"   translate ="no">  
-        <p class="centrado">
-          <img className="i" width="400" height="100" src={logo} ></img>
+      <div  translate ="no">  
+        <p className="centrado">
+          <img width = "600px" height = "150px" src={logo} ></img>
           </p> 
      <Menu2/>
       <div>
-      <h2>Detalle Dog</h2>
+      <p className="centrado">
+      <h4 >Detalle Perro</h4>
+      </p> 
        {props.dogDetalles.name ?
-        <div className="forms"  >
+        <div className="detallePokemon" >
            <h4>{props.dogDetalles.name}</h4>
-          <img width = "200px" height = "200px"src={props.dogDetalles.image} alt={props.dogDetalles.name}/>
+          <img width = "600px" height = "240px"src={props.dogDetalles.image} alt={props.dogDetalles.name}/>
           <h4>Vida: {props.dogDetalles.life_span}</h4>
+          <h4>Peso: {props.dogDetalles.weight} Altura: {props.dogDetalles.height}</h4>
           <h4>Temperamento: {props.dogDetalles.temperament}</h4>
-          {/* <h2>{props.dogDetalles.weight}</h2> */}
-          {/* <h2>{props.dogDetalles.height}</h2> */}
         </div>
          :<Spinner/>
        } 
