@@ -1,22 +1,13 @@
 
 .contenedor{
-    
     justify-content: space-around;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 0px;
   }
-  
   ul {
     list-style-type: none;
-  }
-  /* li {
-    background-color: #F6E3CA;
-    float: left;
-    text-align: center;
-    width: 5em;
-  } */
-  
+  }  
   .paginationBtns{
       margin-top: 600px;
       margin-left: 50px;
@@ -24,7 +15,30 @@
       height: 60px;
       justify-content: center;
   }
-  
-  .img:hover{
-    transform: scale(1.5);
+  .card {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .button1 {
+    /* Alinear los botones con los campos de texto */
+    /* mismo tamaño que los elementos de la etiqueta */
+    position: relative;
+    text-align: center;
+    font-weight: 800;
+    border: 2px solid #000000; /*anchura, estilo y color borde*/
+padding: 2 px; /*espacio alrededor texto*/
+background-color: transparent; /*color botón*/
+color: #000000; /*color texto*/
+text-decoration: none; /*decoración texto*/
+text-transform: uppercase; /*capitalización texto*/
+font-family: 'Open Sans', sans-serif; /*tipografía texto*/
+border-radius: 5px; /*bordes redondos*/
+padding-top: -10px;
+margin-top: 0px;
+/* margin-left: 870px;  */
+  }
+  .button1:hover{
+    color: #ff0000 ;
+    border-color: #ff0000;
   }

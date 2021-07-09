@@ -13,24 +13,24 @@ function Cards(props) {
     const dogss = props.dogs.slice(conteoInicial,conteoFinal)
     console.log(dogss)
     return (
-    <div>
+    <div className="card">
        <div className="contenedor">
             { dogss && dogss.map(c=>
             <div>
              <Card    
                  id={c.id}
                 name={c.name}
-
                 image={c.image}
                 temperament={c.temperament}
              /> 
+             
            </div>
            )}
        </div>
-       <div className="paginationBtns">
-             <button className="button" onClick={() => setPagina(numeroPagina - 1)}>Anterior</button>
-            <button className="button">{numeroPagina}</button>
-            <button className="button" onClick={() => setPagina(numeroPagina + 1)}>Siguiente</button>
+       <div  >
+             <button className="button1" onClick={() => setPagina(numeroPagina - 1)}>Anterior</button>
+            <button  className="button1">{numeroPagina}</button>
+            <button   className="button1" onClick={() => setPagina(numeroPagina + 1)}>Siguiente</button>
          </div>
        
  

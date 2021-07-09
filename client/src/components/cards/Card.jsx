@@ -10,13 +10,13 @@ export default function Card({id,name, image,temperament}) {
          <div>
            <Link to={`/Detalle/${id}`}>   
            <img className = "movieImage"
-              width = "320px" height = "120px"
+              width = "320px" height = "90px"
               src={image}
              alt={name}
             />
             </Link>
          </div>
-         <h4 >{temperament}</h4>
+         <p>{temperament}</p>
 
     </div>
   )
