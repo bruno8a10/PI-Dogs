@@ -26,7 +26,7 @@ function DetalleDog(props) {
        {props.dogDetalles.name ?
         <div className="forms"  >
            <h4>{props.dogDetalles.name}</h4>
-          <img width = "200px" height = "200px"src={props.dogDetalles.image.url} alt={props.dogDetalles.name}/>
+          <img width = "200px" height = "200px"src={props.dogDetalles.image} alt={props.dogDetalles.name}/>
           <h4>Vida: {props.dogDetalles.life_span}</h4>
           <h4>Temperamento: {props.dogDetalles.temperament}</h4>
           {/* <h2>{props.dogDetalles.weight}</h2> */}

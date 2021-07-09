@@ -21,7 +21,7 @@ function Cards(props) {
                  id={c.id}
                 name={c.name}
 
-                image={c.image.url || c.image}
+                image={c.image}
                 temperament={c.temperament}
              /> 
            </div>
