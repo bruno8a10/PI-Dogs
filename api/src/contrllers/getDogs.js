@@ -6,6 +6,7 @@ const axios = require("axios");
 const app = Router();
 app.get("/", async (req,res) =>{
     const name = req.query.name;
+    let response =[];
     try{
         let ApiDog =  await axios.get(URLAPI)
         const ApiDogName = ApiDog.data;
@@ -27,17 +28,31 @@ app.get("/", async (req,res) =>{
              if(BsDogName){
               return res.status(200).json(BsDogName)    
               }
-              return res.send("No existe Id")  
+              
            }catch(error){
            return res.send(error);
            }
         }
         const apiDog =  await axios.get(URLAPI)
         const dogsApi = apiDog.data;
+        for(let i =0; i < dogsApi.length; i++){
+            response.push({
+                id: dogsApi[i].id,
+                name: dogsApi[i].name,
+                ife_span: dogsApi[i].ife_span,
+                weight: dogsApi[i].weight.metric,
+                height: dogsApi[i].height.metric,
+                temperament: dogsApi[i].temperament,
+                image: dogsApi[i].image.url
+            })
+          
+        }
+           
+   
         let bsDog=  await Dog.findAll({
             include: [Temperament]
         });
-        return res.status(200).json(dogsApi.concat(bsDog))
+        return res.status(200).json(bsDog.concat(response))
     }catch(err){
     return res.send("Error")
 }

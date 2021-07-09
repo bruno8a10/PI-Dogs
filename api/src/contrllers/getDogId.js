@@ -13,10 +13,19 @@ app.get("/:id", async function (req,res){
             const ApiDogName = ApiDog.data;
             for(let i=0; i< ApiDogName.length;i++){
                 if(ApiDogName[i].id == id){
-                 return res.status(200).json(ApiDogName[i])
+                  const dog = {
+                    id: ApiDogName[i].id,
+                    name: ApiDogName[i].name,
+                    ife_span: ApiDogName[i].ife_span,
+                    weight: ApiDogName[i].weight.metric,
+                    height: ApiDogName[i].height.metric,
+                    temperament: ApiDogName[i].temperament,
+                    image: ApiDogName[i].image.url 
+                  }
+
+                 return res.status(200).json(dog)
                 }
             }
-
          let dogId = await Dog.findByPk(id,
             {
             include:[Temperament] 
