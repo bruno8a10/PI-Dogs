@@ -16,6 +16,7 @@ function rootReducer(state = initialState, action){
           filtroTemperament: action.payload
         }
       }
+      
     if(action.type === "OrdenarAZ"){
     return{
         ...state,

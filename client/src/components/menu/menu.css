@@ -32,4 +32,23 @@ nav ul li a:hover {
   background: rgba(255, 255, 255, 0.1);
   color:#ff0000
 }
-
+.button4:hover{
+  color: #ff0000;
+}
+.button4 {
+  /* Alinear los botones con los campos de texto */
+  /* mismo tamaño que los elementos de la etiqueta */
+  font-family: "Open Sans";
+  position: relative;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  border: 3px solid transparent; /*anchura, estilo y color borde*/
+padding: 10px; /*espacio alrededor texto*/
+background-color: transparent; /*color botón*/
+color: #000000; /*color texto*/
+text-decoration: none; /*decoración texto*/
+text-transform: uppercase; /*capitalización texto*/
+border-radius: 5px; /*bordes redondos*/
+/* margin-left: 870px;  */
+}

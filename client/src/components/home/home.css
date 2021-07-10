@@ -3,7 +3,22 @@
   margin: 0 auto;
   text-align: center;
 }
-
 p.centrado {
     text-align: center;
   } 
+  .input-css{
+    position: relative;
+    width: 200;
+    height: 400;
+    max-width: 100%; 
+    box-sizing: border-box;
+    margin: 1px auto;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: "Open Sans";
+    }
+    .input-css:hover {
+      border-color:#ff0000;
+    }
+    

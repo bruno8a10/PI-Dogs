@@ -20,15 +20,22 @@ useEffect(() => {
 const handleChange = (q) => {
   setQuery(q);
 }
-
     return(
     <div className="Home">
           <p class="centrado">
-          <img className="i" width="400" height="100" src={logo} ></img>
+          <img className="i" width="400" height="80" src={logo} ></img>
           </p>
         <Menu/>
+        <p class="centrado">
+        <section>
+         <form className="form-control" >
+          <input className="input-css"
+          type="search"
+          placeholder="Buscar..." />
+         </form>
+        </section>
+        </p>
         <Cards/>
-
     </div>
     )
   }
