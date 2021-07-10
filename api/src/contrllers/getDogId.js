@@ -16,7 +16,7 @@ app.get("/:id", async function (req,res){
                   const dog = {
                     id: ApiDogName[i].id,
                     name: ApiDogName[i].name,
-                    ife_span: ApiDogName[i].ife_span,
+                    life_span: ApiDogName[i].life_span,
                     weight: ApiDogName[i].weight.metric,
                     height: ApiDogName[i].height.metric,
                     temperament: ApiDogName[i].temperament,

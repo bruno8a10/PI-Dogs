@@ -7,16 +7,30 @@ const app = Router();
 app.get("/", async (req,res) =>{
     const name = req.query.name;
     let response =[];
+    let responsenombres =[];
+
     try{
         let ApiDog =  await axios.get(URLAPI)
         const ApiDogName = ApiDog.data;
          if(name){
            try{
                for(let i=0; i< ApiDogName.length;i++){
-                   console.log(ApiDogName[i].name)
-                   if(ApiDogName[i].name == name){
-                    return res.status(200).json(ApiDogName[i])
+                   if(ApiDogName[i].name === name){
+                    const dog = {
+                        id: ApiDogName[i].id,
+                        name: ApiDogName[i].name,
+                        life_span: ApiDogName[i].life_span,
+                        weight: ApiDogName[i].weight.metric,
+                        height: ApiDogName[i].height.metric,
+                        temperament: ApiDogName[i].temperament,
+                        image: ApiDogName[i].image.url
+                      }
+                    responsenombres.push(dog);
+                    
                    }
+               }
+               if(responsenombres.length > 0){
+                return res.status(200).json(responsenombres)
                }
              let BsDogName = await Dog.findAll({
                 where:{
@@ -39,7 +53,7 @@ app.get("/", async (req,res) =>{
             response.push({
                 id: dogsApi[i].id,
                 name: dogsApi[i].name,
-                ife_span: dogsApi[i].ife_span,
+                life_span: dogsApi[i].life_span,
                 weight: dogsApi[i].weight.metric,
                 height: dogsApi[i].height.metric,
                 temperament: dogsApi[i].temperament,
@@ -47,8 +61,6 @@ app.get("/", async (req,res) =>{
             })
           
         }
-           
-   
         let bsDog=  await Dog.findAll({
             include: [Temperament]
         });
