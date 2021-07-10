@@ -8,6 +8,14 @@ import Menu from "../menu/Menu";
 import Cards from "../cards/Cards"
 function Home(props) {
 
+const [input, setInput] = useState({
+})
+function handlePoke (e) {
+  setInput({
+    ...input,
+    [e.target.name]:[...input.id, e.target.value]
+  })
+}
 //_____________________
 const [query, setQuery] = useState('');
 useEffect(() => {
@@ -16,10 +24,15 @@ useEffect(() => {
   }
   fetchData(query)
 },[query])
-
+//_________buscar__________
 const handleChange = (q) => {
   setQuery(q);
 }
+const handleSubmit = (event) => {
+  event.preventDefault();
+}
+
+
     return(
     <div className="Home">
           <p class="centrado">
@@ -28,10 +41,11 @@ const handleChange = (q) => {
         <Menu/>
         <p class="centrado">
         <section>
-         <form className="form-control" >
+         <form className="form-control"  onSubmit={(e)=>handleSubmit(e)} >
           <input className="input-css"
           type="search"
-          placeholder="Buscar..." />
+          placeholder="Buscar..." 
+          onChange={(e)=>handleChange(e.target.value)}/>
          </form>
         </section>
         </p>

@@ -18,7 +18,7 @@ function ZA(){
      <nav>
   <ul>
     <li>
-      <a href="#">Home</a>
+      <a href="/Home">Home</a>
     </li>
     <li>
         <button  className="button4" onClick={AZ} >Ordenar A-Z</button>
