@@ -45,12 +45,12 @@ export function emptyDetalleDog(num) {
         dispatch({type: EMPTY_DETALLE_DOG}) 
     }
 }
-// export function filtroP(dogs, filtro){
-//     console.log("legoooooooo soy actions")
-//     console.log(filtro)
-//     let filtroDog = dogs.filter((e) => e.types.id === filtro)
-//     return{type: "FiltrarPorTemperament", payload: filtroDog}
-// };
+export function filtroP(dogs, filtro){
+    console.log("legoooooooo soy actions")
+    console.log(filtro)
+    let filtroDog = dogs.filter((e) => e.types.id === filtro)
+    return{type: "FiltrarPorTemperament", payload: filtroDog}
+};
 //_________ordenado por___________
 export function ordenAZ(dogs){
  let  az =  dogs.sort((a,b) => a.name>b.name?1: -1)

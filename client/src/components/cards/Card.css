@@ -1,7 +1,7 @@
 .movieCard {
     display: flex;
-    width: 410px;
-    height: 220px;
+    width: 400px;
+    height: 200px;
     flex-direction: column;
     align-items: center;
     max-width: 350px;
