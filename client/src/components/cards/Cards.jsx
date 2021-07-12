@@ -1,17 +1,20 @@
-import React, {  useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import "./Cards.css"
 import {getDogS} from "../../actions";
 import { connect } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 function Cards(props) {
+    const estados = useSelector((state) => state);    
 //    paginado
   const [numeroPagina, setPagina] = useState(1);
 	const grupo = 8;
 	const conteoFinal = numeroPagina * grupo;
 	const conteoInicial = conteoFinal - grupo;
     const dogss = props.dogs.slice(conteoInicial,conteoFinal)
-    console.log(dogss)
+    useEffect(()=> {
+        props.getDogS()
+       },[])
     return (
     <div className="card">
        <div className="contenedor">
@@ -32,9 +35,6 @@ function Cards(props) {
             <button  className="button1">{numeroPagina}</button>
             <button   className="button1" onClick={() => setPagina(numeroPagina + 1)}>Siguiente</button>
          </div>
-       
- 
-       
      </div>
     )
 };
