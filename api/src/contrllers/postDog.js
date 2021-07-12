@@ -4,9 +4,9 @@ const {Op} = require ("sequelize");
 const axios = require("axios");
 const { Dog} = require('../db.js');
 app.post('/', async (req, res) => {
-	const { name, height, weight, life_span, image, temp} = req.body;
+	const { name, height, weight, life_span, image, temperaments } = req.body;
 	try {
-		let newDog = await Dog.findOrCreate({
+		let [newDog] = await Dog.findOrCreate({
 		where:{
 			name,
 			height,
@@ -14,12 +14,17 @@ app.post('/', async (req, res) => {
 			life_span,
 			image,
 		}
-		} );
-		//console.log(newDog[0].dataValues.id)	
-		//await newDog[0].dataValues.id.addTemperament(temp);
+		});	
+        //  let arr = temperaments.split(',')
+		// for(let i= 0; i< arr.length;i++){
+		// 	console.log(arr[i])
+		// 	await newDog.addTemperament(arr[i]);
+		// }
+		await newDog.addTemperament(temperaments);
+		
 		return res.json(newDog);
 	} catch (error) {
-		return res.status(200).json(error);
+		return res.status(404).json(error);
 	}
 });
 module.exports = app;
