@@ -5,19 +5,32 @@ import {getDogS} from "../../actions";
 import { connect } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux';
 function Cards(props) {
-    const estados = useSelector((state) => state);    
+    const estados = useSelector((state) => state);  
+      
 //    paginado
   const [numeroPagina, setPagina] = useState(1);
 	const grupo = 8;
 	const conteoFinal = numeroPagina * grupo;
 	const conteoInicial = conteoFinal - grupo;
     const dogss = props.dogs.slice(conteoInicial,conteoFinal)
+   // const dogss2 = props.filtroTemperament.slice(conteoInicial,conteoFinal)
     useEffect(()=> {
         props.getDogS()
        },[])
     return (
     <div className="card">
        <div className="contenedor">
+         {/* {dogss2 && dogss2.map(c=>
+            <div>
+             <Card    
+                 id={c.id}
+                name={c.name}
+                image={c.image}
+                temperament={c.temperament}
+             />  
+           </div>
+        )} */}
+
             { dogss && dogss.map(c=>
             <div>
              <Card    

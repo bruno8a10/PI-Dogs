@@ -9,8 +9,8 @@ const initialState = {
 }
 // //==== Setear Reducers ======//
 function rootReducer(state = initialState, action){
-    if (action.type === "FiltrarPorTemperament") {
-        console.log(state)
+    if (action.type === "FiltrarPorTemperament"){
+        console.log("reduce")
         return {
           ...state, 
           filtroTemperament: action.payload
@@ -29,6 +29,18 @@ function rootReducer(state = initialState, action){
         ordenarDog: action.payload
         }    
         }
+     if(action.type === "OrdenarMax"){
+         return{
+            ...state,
+            ordenarDog: action.payload
+         }    
+     }
+     if(action.type === "OrdenarMin"){
+         return{
+         ...state,
+          ordenarDog: action.payload
+         }    
+    }    
 //______________Rutas__________________
     if(action.type === GET_DOGS){
         return {

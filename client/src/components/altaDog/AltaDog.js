@@ -33,12 +33,6 @@ function AltaDog(props) {
       'Content-Type': 'application/json'
   },
   body: JSON.stringify(input),
-  name: "",
-  height: "",
-  weight: "",
-  speed: "",
-  life_span: "",
-  image: "",
   }) 	
 }
 
