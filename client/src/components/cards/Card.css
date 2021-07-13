@@ -11,6 +11,8 @@
     margin: 38px;
     margin-top: 0px;
     padding: 0.5em 0;
+    border-color: #000000;
+    
   } 
    .movieCard:hover{
     border-radius: 25px;

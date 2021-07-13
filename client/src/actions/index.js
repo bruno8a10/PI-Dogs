@@ -47,7 +47,7 @@ export function emptyDetalleDog(num) {
 }
 export function filtroP(dogs, filtro){
     console.log("soy actions, filtro : "+ filtro)
-    let filtroDog = dogs.filter((e) => e.types.prototype.includes(filtro))
+    let filtroDog = dogs.filter((e) => e.types.includes(filtro))
     return{type: "FiltrarPorTemperament", payload: filtroDog}
 };
 //_________ordenado por  Raza_________
@@ -63,8 +63,8 @@ export function ordenZA(dogs){
 export function ordenMax(dogs){
     let  maxP =  dogs.sort((a,b) => a.weight>b.weight?1: -1)
     return {type: "OrdenarMax", payload: maxP}
-   }
+}
    export function ordenMin(dogs){
     let  minP =  dogs.sort((a,b) => a.weight<b.weight?1: -1)
     return {type: "OrdenarMin", payload: minP}
-   }
+}

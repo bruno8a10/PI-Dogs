@@ -35,10 +35,10 @@ function MIN(){
     <button className="button4" onClick={ZA} >Ordenar Z-A</button>
     </li>
     <li>
-        <button  className="button4" onClick={MAX} >Ordenar Min-Max</button>
+        <button  className="button4" onClick={MAX} >Ordenar Peso Min</button>
     </li>
     <li>
-    <button className="button4" onClick={MIN} >Ordenar Max-Min</button>
+    <button className="button4" onClick={MIN} >Ordenar Peso Max</button>
     </li>
 
     <li>
