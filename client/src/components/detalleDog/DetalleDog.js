@@ -28,7 +28,7 @@ function DetalleDog(props) {
           <img width = "600px" height = "240px"src={props.dogDetalles.image} alt={props.dogDetalles.name}/>
           <h4>Vida: {props.dogDetalles.life_span}</h4>
           <h4>Peso: {props.dogDetalles.weight} Altura: {props.dogDetalles.height}</h4>
-          <h4>Temperamento: {props.dogDetalles.temperament}</h4>
+          <h4>Temperamento: {props.dogDetalles.temperaments}</h4>
         </div>
          :<Spinner/>
        } 

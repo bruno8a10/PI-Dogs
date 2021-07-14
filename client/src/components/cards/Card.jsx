@@ -2,7 +2,7 @@ import React from 'react';
 import  "./Card.css"
 import { Link } from "react-router-dom";
 
-export default function Card({id,name, image,temperament}) {
+export default function Card({id,name, image,temperaments}) {
 
   return (
     <div className = "movieCard" >
@@ -16,7 +16,7 @@ export default function Card({id,name, image,temperament}) {
             />
             </Link>
          </div>
-         <p>{temperament}</p>
+         <p>{temperaments}</p>
 
     </div>
   )

@@ -37,7 +37,7 @@ function Cards(props) {
                  id={c.id}
                 name={c.name}
                 image={c.image}
-                temperament={c.temperament}
+                temperaments={c.temperaments}
              /> 
              
            </div>
