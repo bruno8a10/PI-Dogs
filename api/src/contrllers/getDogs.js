@@ -6,42 +6,12 @@ const axios = require("axios");
 const app = Router();
 app.get("/", async (req,res) =>{
     const name = req.query.name;
-    const temperament =  req.query.temperament;
     let response =[];
     let responsenombres =[];
 
     try{
         let ApiDog =  await axios.get(URLAPI)
         const ApiDogName = ApiDog.data;
-
-    if(temperament){
-        try{
-
-            for(let i=0; i< ApiDogName.length;i++){
-                if(ApiDogName[i].temperament.includes(temperament)){
-                 const dog = {
-                     id: ApiDogName[i].id,
-                     name: ApiDogName[i].name,
-                     life_span: ApiDogName[i].life_span,
-                     weight: ApiDogName[i].weight.metric,
-                     height: ApiDogName[i].height.metric,
-                     temperaments: ApiDogName[i].temperament,
-                     image: ApiDogName[i].image.url
-                   }
-                 responsenombres.push(dog);
-                }
-            }
-            if(responsenombres.length > 0){
-                return res.status(200).json(responsenombres)
-               }
-
-        }catch(err){
-            return res.status(404)
-        }
-
-    }
-
-
 
          if(name){
            try{
