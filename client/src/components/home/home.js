@@ -6,6 +6,7 @@ import logo from "../../img/apiDog.png";
 import "./Home.css";
 import Menu from "../menu/Menu";
 import Filtro from "../filtro/filtro";
+import Filtro2 from "../filtro/filtroNombre";
 import Cards from "../cards/Cards"
 function Home(props) {
 
@@ -41,6 +42,7 @@ const handleSubmit = (event) => {
           </p>
         <Menu/>
         <Filtro/>
+        <Filtro2/>
         <p class="centrado">
         <section>
          <form className="form-control"  onSubmit={(e)=>handleSubmit(e)} >
