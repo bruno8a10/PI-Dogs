@@ -19,7 +19,7 @@ app.get("/:id", async function (req,res){
                     life_span: ApiDogName[i].life_span,
                     weight: ApiDogName[i].weight.metric,
                     height: ApiDogName[i].height.metric,
-                    temperament: ApiDogName[i].temperament,
+                    temperaments: ApiDogName[i].temperament,
                     image: ApiDogName[i].image.url 
                   }
 

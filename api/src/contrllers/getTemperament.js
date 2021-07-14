@@ -6,8 +6,8 @@ const axios = require("axios");
 const app = Router();
 app.get("/", async (req,res) =>{
     try{
-        const apiDog =  await axios.get(URLAPI)
-        const dogs = apiDog.data;
+        // const apiDog =  await axios.get(URLAPI)
+        // const dogs = apiDog.data;
         // for(let i=0; i< dogs.length; i++){
         //     let arr = dogs[i].temperament.split(',')
         //     for(let j = 0;j< arr.length; j++){

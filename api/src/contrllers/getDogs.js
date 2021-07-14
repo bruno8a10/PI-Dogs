@@ -6,12 +6,43 @@ const axios = require("axios");
 const app = Router();
 app.get("/", async (req,res) =>{
     const name = req.query.name;
+    const temperament =  req.query.temperament;
     let response =[];
     let responsenombres =[];
 
     try{
         let ApiDog =  await axios.get(URLAPI)
         const ApiDogName = ApiDog.data;
+
+    if(temperament){
+        try{
+
+            for(let i=0; i< ApiDogName.length;i++){
+                if(ApiDogName[i].temperament.includes(temperament)){
+                 const dog = {
+                     id: ApiDogName[i].id,
+                     name: ApiDogName[i].name,
+                     life_span: ApiDogName[i].life_span,
+                     weight: ApiDogName[i].weight.metric,
+                     height: ApiDogName[i].height.metric,
+                     temperaments: ApiDogName[i].temperament,
+                     image: ApiDogName[i].image.url
+                   }
+                 responsenombres.push(dog);
+                }
+            }
+            if(responsenombres.length > 0){
+                return res.status(200).json(responsenombres)
+               }
+
+        }catch(err){
+            return res.status(404)
+        }
+
+    }
+
+
+
          if(name){
            try{
                for(let i=0; i< ApiDogName.length;i++){
@@ -22,7 +53,7 @@ app.get("/", async (req,res) =>{
                         life_span: ApiDogName[i].life_span,
                         weight: ApiDogName[i].weight.metric,
                         height: ApiDogName[i].height.metric,
-                        temperament: ApiDogName[i].temperament,
+                        temperaments: ApiDogName[i].temperament,
                         image: ApiDogName[i].image.url
                       }
                     responsenombres.push(dog);
@@ -32,6 +63,7 @@ app.get("/", async (req,res) =>{
                if(responsenombres.length > 0){
                 return res.status(200).json(responsenombres)
                }
+
              let BsDogName = await Dog.findAll({
                 where:{
                     name:{
@@ -39,6 +71,7 @@ app.get("/", async (req,res) =>{
                     }
                 } 
              },);
+
              if(BsDogName){
               return res.status(200).json(BsDogName)    
               }
@@ -56,7 +89,7 @@ app.get("/", async (req,res) =>{
                 life_span: dogsApi[i].life_span,
                 weight: dogsApi[i].weight.metric,
                 height: dogsApi[i].height.metric,
-                temperament: dogsApi[i].temperament,
+                temperaments: dogsApi[i].temperament,
                 image: dogsApi[i].image.url
             })
           
