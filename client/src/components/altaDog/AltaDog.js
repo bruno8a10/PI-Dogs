@@ -5,6 +5,7 @@ import logo from "../../img/apiDog.png";
 import "./AltaDog.css"; 
 import { Link } from "react-router-dom";
 import Menu2 from "../menu/Menu2";
+import {getTemperament} from "../../actions";
 
 function AltaDog(props) {
   //post
@@ -23,6 +24,9 @@ function AltaDog(props) {
       [e.target.name]: e.target.value
     })
   }
+  useEffect(() => {
+    props.getTemperament()
+  	},[])
 
  async function handleSubmit(e) {
   e.preventDefault()
@@ -57,6 +61,12 @@ function AltaDog(props) {
           <p>Altura</p>
           <input type="text"  name="weight"  onChange={handleChange}  ></input>
           <p>Temperamento</p>
+          <select className="select-css"   name="filtro">
+          <option value="">Temperamento de Perro</option>
+          {props.temperament && props.temperament.map(c => (
+            <option value={c.name} name="c.name">{c.name}</option>
+          ))}
+         </select>
          
           <button  type="submit" className="button3">Agregar</button>
          
@@ -79,6 +89,8 @@ function mapStateToProps(state){
 }
 //Actions
 function mapDispatchToProps(dispatch) {
-  return 
+  return {
+    getTemperament:() => dispatch(getTemperament()),
+}
 }
 export default connect(mapStateToProps,mapDispatchToProps)(AltaDog);

@@ -1,6 +1,6 @@
 .detalle {
     border-radius: 10px; /*bordes redondos*/
-      border: 3px solid #ffffff; /*anchura, estilo y color borde*/
+      border: 3px solid #000000; /*anchura, estilo y color borde*/
       width: 60%;
       margin: 0 auto;
       text-align: center;

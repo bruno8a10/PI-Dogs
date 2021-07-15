@@ -33,8 +33,6 @@ const handleChange = (q) => {
 const handleSubmit = (event) => {
   event.preventDefault();
 }
-
-
     return(
     <div className="Home">
           <p class="centrado">
