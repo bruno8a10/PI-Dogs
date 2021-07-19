@@ -16,6 +16,7 @@ function AltaDog(props) {
     speed: "",
     life_span: "",
     image: "",
+    temperaments:"",
  })
 
  function handleChange(e) {
@@ -61,7 +62,7 @@ function AltaDog(props) {
           <p>Altura</p>
           <input type="text"  name="weight"  onChange={handleChange}  ></input>
           <p>Temperamento</p>
-          <select className="select-css"   name="filtro">
+          <select className="select-css"   name="temperaments">
           <option value="">Temperamento de Perro</option>
           {props.temperament && props.temperament.map(c => (
             <option value={c.name} name="c.name">{c.name}</option>

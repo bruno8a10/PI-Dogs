@@ -19,14 +19,15 @@ const estados = useSelector((state) => state);
     return (
     <div className="card">
        <div className="contenedor">
-         {dogss2.length > 0 && dogss2.map(c=>
+         ?{dogss2.length > 0 && dogss2.map(c=>
              <Card    
                  id={c.id}
                 name={c.name}
                 image={c.image}
                 temperaments={c.temperaments}
              />    
-         )}:{dogss && dogss.map(c=>
+         )}:
+         {dogss && dogss.map(c=>
              <Card    
                  id={c.id}
                 name={c.name}
