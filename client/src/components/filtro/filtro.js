@@ -29,7 +29,7 @@ const [inPoke, setInPoke] = useState({
   return (
     <div>
         <select className="select-css"   name="filtro"  onChange={(e) => fn2(e)} >
-          <option value="">Temperamento de Perro</option>
+          <option value="">Temperamento</option>
           {props.temperament && props.temperament.map(c => (
             <option value={c.name} name="c.name">{c.name}</option>
           ))}

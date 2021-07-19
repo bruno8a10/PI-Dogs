@@ -45,17 +45,6 @@ const handleSubmit = (event) => {
         <Menu/>
         <Filtro/>
         <Filtro2/>
-        
-        <p class="centrado">
-        <section>
-         <form className="form-control"  onSubmit={(e)=>handleSubmit(e)} >
-          <input className="input-css"
-          type="search"
-          placeholder="Buscar..." 
-          onChange={(e)=>handleChange(e.target.value)}/>
-         </form>
-        </section>
-        </p>
         <Cards/>
     </div>
     )

@@ -10,7 +10,7 @@ export default function Card({id,name, image,temperaments}) {
          <div>
            <Link to={`/Detalle/${id}`}>   
            <img className = "movieImage"
-              width = "320px" height = "90px"
+              width = "320px" height = "75px"
               src={image}
              alt={name}
             />

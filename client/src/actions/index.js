@@ -46,30 +46,13 @@ export function emptyDetalleDog(num) {
     }
 }
 export function filtroP(dogs, filtro){
-    let arr =[]
+     let arr =[]
     for(let i=0; i<dogs.length;i++){
-        console.log("soy actions, filtro : "+ filtro)
-        let arr1 = dogs[i].temperaments.split(',')
-        for(let j=0; j<arr1.length;j++){
-            if(arr1[j] === filtro){
-             console.log("siii");
-             arr.push(dogs[i])
+            if(dogs[i].temperaments){
+                if(dogs[i].temperaments.includes(filtro)){
+                    arr.push(dogs[i])   
+                }
             }
-            console.log("npo");
-        } 
-        // for(let j=0; j<dogs[i].temperaments.length;j++){
-        //      if(dogs[i].temperament[j] === filtro){
-        //       console.log("siii");
-        //       arr.push(dogs[i])
-        //      }else{
-        //         console.log("npo");
-        //      }
-        //  }
-        //  if(dogs[i].temperaments.includes(filtro)){
-        //     arr.push(dogs[i]) 
-        //  }
-
-
     }
     return{type: "FiltrarPorTemperament", payload: arr}
 };
@@ -91,3 +74,4 @@ export function ordenMax(dogs){
     let  minP =  dogs.sort((a,b) => a.weight<b.weight?1: -1)
     return {type: "OrdenarMin", payload: minP}
 }
+
