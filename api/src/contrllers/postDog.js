@@ -21,7 +21,7 @@ app.post('/', async (req, res) => {
 		// 	console.log(arr[i])
 		// 	await newDog.addTemperament(arr[i]);
 		// }
-		//await newDog.addTemperament(temperaments);
+		await newDog.addTemperament(temperaments);
 		
 		return res.json(newDog);
 	} catch (error) {
