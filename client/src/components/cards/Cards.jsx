@@ -12,6 +12,7 @@ const estados = useSelector((state) => state);
 	const conteoFinal = numeroPagina * grupo;
 	const conteoInicial = conteoFinal - grupo;
     const dogss = props.dogs.slice(conteoInicial,conteoFinal);
+    const dogsOrigen = props.filtroNombre.slice(conteoInicial,conteoFinal);
    const dogss2 = props.filtroTemperament.slice(conteoInicial,conteoFinal);
     useEffect(()=> {
         props.getDogS()
@@ -19,14 +20,22 @@ const estados = useSelector((state) => state);
     return (
     <div className="card">
        <div className="contenedor">
-         ?{dogss2.length > 0 && dogss2.map(c=>
+         {dogss2.length > 0 && dogss2.map(c=>
              <Card    
                  id={c.id}
                 name={c.name}
                 image={c.image}
                 temperaments={c.temperaments}
              />    
-         )}:
+         )}
+        {dogsOrigen.length > 0 && dogsOrigen.map(c=>
+             <Card    
+                 id={c.id}
+                name={c.name}
+                image={c.image}
+                temperaments={c.temperaments}
+             />    
+         )}
          {dogss && dogss.map(c=>
              <Card    
                  id={c.id}

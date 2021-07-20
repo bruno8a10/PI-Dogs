@@ -7,13 +7,14 @@ import "./Home.css";
 import Menu from "../menu/Menu";
 import Filtro from "../filtro/filtro";
 import Filtro2 from "../filtro/filtroNombre";
+import Filtro3 from "../filtro/filtroOrigen";
 
 import Cards from "../cards/Cards";
 import { useDispatch, useSelector } from 'react-redux';
 
 function Home(props) {
 
-  //const estados = useSelector((state) => state); 
+const estados = useSelector((state) => state); 
 const [input, setInput] = useState({
 })
 function handlePoke (e) {
@@ -43,8 +44,12 @@ const handleSubmit = (event) => {
           <img className="i" width="400" height="70" src={logo} ></img>
           </p>
         <Menu/>
+        <div className="contenedor2">
         <Filtro/>
         <Filtro2/>
+        <Filtro3/>
+        </div>
+        
         
         <p class="centrado">
         <section>

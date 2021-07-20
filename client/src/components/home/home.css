@@ -22,3 +22,10 @@ p.centrado {
       border-color:#ff0000;
     }
     
+    
+.contenedor2{
+  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+}

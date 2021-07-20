@@ -5,17 +5,26 @@ const initialState = {
     dogs:[],
     dogDetalles:{},
     filtroTemperament:[],
+    filtroNombre:[],
     ordenarDog:[]
 }
 // //==== Setear Reducers ======//
 function rootReducer(state = initialState, action){
+
     if (action.type === "FiltrarPorTemperament"){
-        console.log("reduce")
         return {
-          ...state, 
+           state, 
           filtroTemperament: action.payload
         }
       }
+
+      if (action.type === "FiltrarPorOrigen"){
+        console.log("reduce filtro po nombre")
+        return {
+          ...state, 
+          filtroNombre: action.payload
+        }
+      }  
       
     if(action.type === "OrdenarAZ"){
     return{
