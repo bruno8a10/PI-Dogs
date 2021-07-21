@@ -12,8 +12,6 @@ function fn2(e) {
     dispatch(filtroOrigen(pFiltroOrigen, e.target.value));
 }
    //treaera todo los tipos de pokemones
- 
-
 
  //___________________________________
       //treaera todo los tipos de pokemones

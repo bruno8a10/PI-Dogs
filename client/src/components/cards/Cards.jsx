@@ -6,29 +6,48 @@ import { connect } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux';
 function Cards(props) {
 const estados = useSelector((state) => state);  
+const filtroT = useSelector((state) => state.filtroTemperament);  
+const filtroO = useSelector((state) => state.filtroNombre);  
+console.log(filtroO)
 //    paginado
   const [numeroPagina, setPagina] = useState(1);
 	const grupo = 8;
 	const conteoFinal = numeroPagina * grupo;
 	const conteoInicial = conteoFinal - grupo;
     const dogss = props.dogs.slice(conteoInicial,conteoFinal);
-    const dogsOrigen = props.filtroNombre.slice(conteoInicial,conteoFinal);
-   const dogss2 = props.filtroTemperament.slice(conteoInicial,conteoFinal);
+//     const dogsOrigen = props.filtroNombre.slice(conteoInicial,conteoFinal);
+//    const dogsTemperament = props.filtroTemperament.slice(conteoInicial,conteoFinal);
     useEffect(()=> {
         props.getDogS()
        },[])
     return (
     <div className="card">
        <div className="contenedor">
-         {dogss2.length > 0 && dogss2.map(c=>
-             <Card    
+
+         { filtroT.length < 1 && dogss.length > 0 ? dogss.map(c=>
+             <Card   
+              key={c.id} 
                  id={c.id}
                 name={c.name}
                 image={c.image}
                 temperaments={c.temperaments}
-             />    
-         )}
-        {dogsOrigen.length > 0 && dogsOrigen.map(c=>
+             /> 
+         )
+         : filtroT.map(c=>
+            <Card    
+               key={c.id} 
+                id={c.id}
+               name={c.name}
+               image={c.image}
+               temperaments={c.temperaments}
+            />   )
+            }
+
+
+
+
+
+        {/* {dogss.length > 0 && dogss.map(c=>
              <Card    
                  id={c.id}
                 name={c.name}
@@ -43,7 +62,7 @@ const estados = useSelector((state) => state);
                 image={c.image}
                 temperaments={c.temperaments}
              /> 
-         )}
+         )} */}
        </div>
        <div  >
              <button className="button1" onClick={() => setPagina(numeroPagina - 1)}>Anterior</button>

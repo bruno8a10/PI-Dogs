@@ -13,7 +13,7 @@ function rootReducer(state = initialState, action){
 
     if (action.type === "FiltrarPorTemperament"){
         return {
-           state, 
+           ...state, 
           filtroTemperament: action.payload
         }
       }
