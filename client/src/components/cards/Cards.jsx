@@ -22,7 +22,8 @@ console.log(filtroO)
     <div className="card">
        <div className="contenedor">
 
-         { filtroO.length < 1 && dogss.length > 0 ? dogss.map(c=>
+       { filtroT.length < 1 && filtroO.length < 1 && dogss.length > 0 ? dogss.map(c=>
+        //  { filtroO.length < 1 && dogss.length > 0 ? dogss.map(c=>
              <Card   
               key={c.id} 
                  id={c.id}
@@ -31,15 +32,15 @@ console.log(filtroO)
                 temperaments={c.temperaments}
              /> 
          )
-        //   :filtroT.length > 0 && filtroT.map(c=>
-        //     <Card    
-        //        key={c.id} 
-        //         id={c.id}
-        //        name={c.name}
-        //        image={c.image}
-        //        temperaments={c.temperaments}
-        //     />)
-            :filtroO.map(c=>
+          :filtroT.length < 0 && filtroT.length > 0 ? filtroT.map(c=>
+            <Card    
+               key={c.id} 
+                id={c.id}
+               name={c.name}
+               image={c.image}
+               temperaments={c.temperaments}
+            />)
+            :filtroO.length > 0 && filtroO.map(c=>
                 <Card    
                    key={c.id} 
                     id={c.id}
