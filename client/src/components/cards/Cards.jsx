@@ -32,7 +32,7 @@ console.log(filtroO)
                 temperaments={c.temperaments}
              /> 
          )
-          :filtroT.length < 0 && filtroT.length > 0 ? filtroT.map(c=>
+          :filtroT.length > 0 ? filtroT.map(c=>
             <Card    
                key={c.id} 
                 id={c.id}
