@@ -15,8 +15,6 @@ console.log(filtroO)
 	const conteoFinal = numeroPagina * grupo;
 	const conteoInicial = conteoFinal - grupo;
     const dogss = props.dogs.slice(conteoInicial,conteoFinal);
-//     const dogsOrigen = props.filtroNombre.slice(conteoInicial,conteoFinal);
-//    const dogsTemperament = props.filtroTemperament.slice(conteoInicial,conteoFinal);
     useEffect(()=> {
         props.getDogS()
        },[])
@@ -24,7 +22,7 @@ console.log(filtroO)
     <div className="card">
        <div className="contenedor">
 
-         { filtroT.length < 1 && dogss.length > 0 ? dogss.map(c=>
+         { filtroO.length < 1 && dogss.length > 0 ? dogss.map(c=>
              <Card   
               key={c.id} 
                  id={c.id}
@@ -33,36 +31,23 @@ console.log(filtroO)
                 temperaments={c.temperaments}
              /> 
          )
-         : filtroT.map(c=>
-            <Card    
-               key={c.id} 
-                id={c.id}
-               name={c.name}
-               image={c.image}
-               temperaments={c.temperaments}
-            />   )
+        //   :filtroT.length > 0 && filtroT.map(c=>
+        //     <Card    
+        //        key={c.id} 
+        //         id={c.id}
+        //        name={c.name}
+        //        image={c.image}
+        //        temperaments={c.temperaments}
+        //     />)
+            :filtroO.map(c=>
+                <Card    
+                   key={c.id} 
+                    id={c.id}
+                   name={c.name}
+                   image={c.image}
+                   temperaments={c.temperaments}
+                />)
             }
-
-
-
-
-
-        {/* {dogss.length > 0 && dogss.map(c=>
-             <Card    
-                 id={c.id}
-                name={c.name}
-                image={c.image}
-                temperaments={c.temperaments}
-             />    
-         )}
-         {dogss && dogss.map(c=>
-             <Card    
-                 id={c.id}
-                name={c.name}
-                image={c.image}
-                temperaments={c.temperaments}
-             /> 
-         )} */}
        </div>
        <div  >
              <button className="button1" onClick={() => setPagina(numeroPagina - 1)}>Anterior</button>

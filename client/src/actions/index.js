@@ -56,8 +56,9 @@ export function filtroP(dogs, filtro){
     }
     return{type: "FiltrarPorTemperament", payload: arr}
 };
+
 export function filtroOrigen(dogs, filtroOrigen){
-    console.log("........................por nombre")
+    console.log("........................por Origen"+ filtroOrigen)
     let arrOrigen =[]
    for(let i=0; i<dogs.length;i++){
            //guarda lo de la api
@@ -70,6 +71,8 @@ export function filtroOrigen(dogs, filtroOrigen){
    }
    return{type: "FiltrarPorOrigen", payload: arrOrigen}
 };
+
+
 //_________ordenado por  Raza_________
 export function ordenAZ(dogs){
  let  az =  dogs.sort((a,b) => a.name>b.name?1: -1)
