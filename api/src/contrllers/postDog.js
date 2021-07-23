@@ -2,12 +2,12 @@ const { Router } = require('express');
 const app = Router();
 const {Op} = require ("sequelize");
 const axios = require("axios");
-const { Dog} = require('../db.js');
+const { Dog,Temperament} = require('../db.js');
 app.post('/', async (req, res) => {
 	const { name, height, weight, life_span, image, temperaments } = req.body;
 	console.log("name :"+name,"h:"+height,"w:"+weight,"l:"+life_span, "imagen :"+image)
 	try {
-		let [newDog] = await Dog.findOrCreate({
+		let [newDog,create] = await Dog.findOrCreate({
 		where:{
 			name,
 			height,
@@ -21,6 +21,8 @@ app.post('/', async (req, res) => {
 		// 	console.log(arr[i])
 		// 	await newDog.addTemperament(arr[i]);
 		// }
+		// no lo toma con el set da vacio await newDog.setTemperament(temperaments);
+		console.log
 		await newDog.addTemperament(temperaments);
 		
 		return res.json(newDog);
